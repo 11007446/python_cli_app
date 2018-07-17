@@ -1,5 +1,5 @@
 /app
-    app.py
+app.py
     /test
     test.py
 readme.md
