@@ -14,10 +14,19 @@ def pregnant():
     return child
 
 
-if __name__ == '__main__':
-    son1 = pregnant()
-    son2 = pregnant()
-    son3 = pregnant()
-    son4 = pregnant()
 
+def printme(str):
+    print(str)
+
+
+
+if __name__ == '__main__':
+    # son = pregnant()
+    # son()
+    # son()
+    # son()
+    # son()
+    # son()
+    printme("print str")
+    printme(str="the str")
     pass
