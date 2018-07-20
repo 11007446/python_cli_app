@@ -8,11 +8,9 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": [
-                "127.0.0.1"
+            "args": ["D:/developer/python_cli_app/app/struct_demo.txt"
+                ,"D:/developer/pathoutput"]
 
-            ]
-            
         }
     ]
 }

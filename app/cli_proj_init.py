@@ -10,11 +10,26 @@
 
 import os
 import shutil
-#import argparse
+import argparse
 
+VERSION = "0.0.1"
 
 
 def clicommand():
+    global VERSION
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "-v", "--version", help="show version", action="store_true")
+    parser.add_argument("spath", help="struct file path")
+    parser.add_argument("tpath", help="target path")
+    args = parser.parse_args()
+
+    if (args.version):
+        print("{:*^30}".format(VERSION))
+
+    doJob(args.spath, args.tpath)
+    #       "D:/developer/pathoutput")
     pass
 
 
@@ -206,9 +221,8 @@ def ThrowCustomErr(errormsg):
 
 
 if __name__ == '__main__':
-    # TODO: 测试程序
-    # TODO: 若创建失败则删除目录文件夹，回复原状
-    doJob("D:/developer/python_cli_app/app/struct_demo.txt",
-          "D:/developer/pathoutput")
+    # doJob("D:/developer/python_cli_app/app/struct_demo.txt",
+    #       "D:/developer/pathoutput")
+    clicommand()
 
     pass
