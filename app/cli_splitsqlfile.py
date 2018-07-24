@@ -3,7 +3,7 @@
 
 import os
 import shutil
-import argparse
+#import argparse
 
 VERSION = "0.0.1"
 
@@ -24,7 +24,7 @@ VERSION = "0.0.1"
 #     pass
 
 
-def parseWholeFile(filePath, currentYear, specYear):
+def parsewholefile(filePath, currentYear, specYear):
     '''
     1.根据文件路径[filePath]读取总建表文件，将其中每一个建表语句切割成单独的建表语句文件，放置在总建表文件同级[建表语句]
     2.建表语句中将[currentYear]替换成[specYear]
@@ -40,10 +40,12 @@ def parseWholeFile(filePath, currentYear, specYear):
 
     #拆分大脚本文件到单独建表脚本文件
     splitfile(filePath, sqlDirPath)
-    renameFile(sqlDirPath)
+
+    #重命名拆分后单表脚本文件, 替换[specYear]
+    renamefile(sqlDirPath, currentYear, specYear)
 
 
-def renameFile(sqlDirPath):
+def renamefile(sqlDirPath, currentYear, specYear):
     sqlfiles = os.listdir(sqlDirPath)
     for index, sqlfile in enumerate(sqlfiles):
         newfilename = ""
@@ -58,8 +60,9 @@ def renameFile(sqlDirPath):
                         "]", "")  # 剥出表名
                     print(line)
                     newfilename = '{}/{}.sql'.format(sqlDirPath, line)
-                    break
+                    #break
                 pass
+                line
 
             pass
         pass
@@ -91,7 +94,7 @@ def splitfile(filePath, sqlDirPath):
 
 
 if __name__ == '__main__':
-    parseWholeFile(
+    parsewholefile(
         "D:\\cvsdocument\\应用开发部\\科研计划项目\\论证项目管理子系统（课题可行性方案）\\设计文档\\2018年度\\2018年度可行性方案新建表脚本.sql",
         "2018", "2019")
     pass

@@ -7,6 +7,7 @@ name = "pypi"
 clint = "*"
 click = "*"
 scapy = "*"
+in-place = "*"
 
 [dev-packages]
 "flake8" = "*"
