@@ -1,95 +1,94 @@
-分析结果内容如下:
-***********视图列表如下:************
-orgInfoView
-view_notCheckApply_pmp
-wkyname_cata_2018_view
 
+2018年度可行性方案wkyTableName.asp分析结果内容如下:
+***********视图列表如下:************
+orgInfoView                                 不涉及翻年度
+view_notCheckApply_pmp                      不涉及翻年度
+wkyname_cata_2018_view                      翻年度新建
+core_commonCatalog                          增加新年度脚本片段
 
 ********其中,带年度后缀列表如下:*********
-proposerbaseinfo_2018
-wky_animal_1_2018
-wky_animal_2_2018
-wky_attachment_2018_file
-wky_checkindex_2018
-wky_image_2018_file
-wky_intercooperate_2018
-wky_knowpr_2018
-wky_kp_2018
-wky_kpexhibit_2018
-wky_kpexhibitdetail_2018
-wky_kpplan_2018
-wky_largeapparatusbaesinfo_2018
-wky_largeapparatusbaesinfo_expand_2018
-wky_meeting_2018
-wky_newproduct_2018
-wky_newproductword_2018_file
-wky_operateLog_2018
-wky_other_2018
-wky_person_base_2018
-wky_person_expandeight_2018
-wky_person_expandfive_2018
-wky_person_expandfour_2018
-wky_person_expandone_2018
-wky_person_expandseven_2018
-wky_person_expandsix_2018
-wky_person_expandthree_2018
-wky_person_expandtwo_2018
-wky_postdoctoral_2018
-wky_titan_2018
-wky_titan_Addons_2018
-wky_titan_AfterMoney_2018
-wky_titan_AfterMoney_check_2018
-wky_titan_AfterMoney_money_2018
-wkym_deg_2018
-wkym_des_2018
-wkym_dex_2018
-wkym_innofund2_2018
-wkym_innofund2_zgdw_2018
-wkym_innofund2_zjjg_2018
-wkym_ma_2018
-wkym_magnolia1_2018
-wkym_magnolia2_2018
-wkym_person_2018
-wkym_person_a_2018
-wkym_person_b_2018
-wkym_person_c_2018
-wkym_person_d_2018
-wkym_person_e_2018
-wkym_person_f_2018
-wkym_person_g_2018
-wkym_person_h_2018
-wkym_person_i_2018
-wkym_person_other_2018
-wkym_person_titan_2018
-wkym_unitinfo2_2018
-wkym_wx_2018
-wkymoney_2018
-wkymoney_added_2018
-wkynameAddition_2018
-wkyname_2018
-wkyname_2018
+wky_animal_1_2018                           翻年度新建
+wky_animal_2_2018                           翻年度新建
+wky_attachment_2018_file                    翻年度新建
+wky_checkindex_2018                         翻年度新建
+wky_image_2018_file                         翻年度新建
+wky_intercooperate_2018                     翻年度新建
+wky_knowpr_2018                             翻年度新建
+wky_kp_2018                                 翻年度新建
+wky_kpexhibit_2018                          翻年度新建
+wky_kpexhibitdetail_2018                    翻年度新建
+wky_kpplan_2018                             翻年度新建
+wky_largeapparatusbaesinfo_2018             翻年度新建
+wky_largeapparatusbaesinfo_expand_2018      翻年度新建
+wky_meeting_2018                            翻年度新建
+wky_newproduct_2018                         翻年度新建
+wky_newproductword_2018_file                翻年度新建
+wky_other_2018                              翻年度新建
+wky_person_base_2018                        翻年度新建
+wky_person_expandeight_2018                 翻年度新建
+wky_person_expandfive_2018                  翻年度新建
+wky_person_expandfour_2018                  翻年度新建
+wky_person_expandone_2018                   翻年度新建
+wky_person_expandseven_2018                 翻年度新建
+wky_person_expandsix_2018                   翻年度新建
+wky_person_expandthree_2018                 翻年度新建
+wky_person_expandtwo_2018                   翻年度新建
+wky_postdoctoral_2018                       翻年度新建
+wky_titan_2018                              翻年度新建
+wky_titan_Addons_2018                       翻年度新建
+wky_titan_AfterMoney_2018                   翻年度新建
+wky_titan_AfterMoney_check_2018             翻年度新建
+wky_titan_AfterMoney_money_2018             翻年度新建
+wkym_deg_2018                               翻年度新建
+wkym_des_2018                               翻年度新建
+wkym_dex_2018                               翻年度新建
+wkym_innofund2_2018                         翻年度新建
+wkym_innofund2_zgdw_2018                    翻年度新建
+wkym_innofund2_zjjg_2018                    翻年度新建
+wkym_ma_2018                                翻年度新建
+wkym_magnolia1_2018                         翻年度新建
+wkym_magnolia2_2018                         翻年度新建
+wkym_person_2018                            翻年度新建
+wkym_person_a_2018                          翻年度新建
+wkym_person_b_2018                          翻年度新建
+wkym_person_c_2018                          翻年度新建
+wkym_person_d_2018                          翻年度新建
+wkym_person_e_2018                          翻年度新建
+wkym_person_f_2018                          翻年度新建
+wkym_person_g_2018                          翻年度新建
+wkym_person_h_2018                          翻年度新建
+wkym_person_i_2018                          翻年度新建
+wkym_person_other_2018                      翻年度新建
+wkym_person_titan_2018                      翻年度新建
+wkym_unitinfo2_2018                         翻年度新建
+wkym_wx_2018                                翻年度新建
+wkymoney_2018                               翻年度新建
+wkymoney_added_2018                         翻年度新建
+wkynameAddition_2018                        翻年度新建
+wkyname_2018                                翻年度新建
+proposerbaseinfo_2018                       翻年度新建
 
 
 **********无年度后缀列表如下:**********
-[192.168.5.20].[tesc].[dbo].[tesc_techsurvey]
-[tesc].[dbo].[tesc_techsurvey]
-core_commonCatalog
-p_cata_tree
-tab_guild
-tab_subjects
-wky_titan_AfterMoney_2011
-wky_titan_AfterMoney_2011
-wkym_yj_2014
-wkymoney_2011
-wkymoney_added_2011
-wkyname_2011
-zrkxj_role
+[192.168.5.20].[tesc].[dbo].[tesc_techsurvey]   不涉及翻年度
+[tesc].[dbo].[tesc_techsurvey]                  不涉及翻年度
+p_cata_tree                                     不涉及翻年度
+tab_guild                                       不涉及翻年度
+tab_subjects                                    不涉及翻年度
+wky_titan_AfterMoney_2011                       不涉及翻年度
+wky_titan_AfterMoney_2011                       不涉及翻年度
+wkym_yj_2014                                    不涉及翻年度
+wkymoney_2011                                   不涉及翻年度
+wkymoney_added_2011                             不涉及翻年度
+wkyname_2011                                    不涉及翻年度
+zrkxj_role                                      不涉及翻年度
 
 
-************************************************************
-总结：视图合计3个,数据表带年度后缀62个,无年度后缀13个,合计共75个
-************************************************************
+****************************************************************************************
+总结：视图合计4个,2个涉及翻年度; 数据表带年度后缀涉及翻年度60个,无年度后缀不涉及翻年度13个,合计共73个。
+****************************************************************************************
 
 
 *********无效忽略对象列表如下:**********
-projCatalog2018
+projCatalog2018         数据库中未找到该表
+wky_operateLog_2018     数据库中未找到该表

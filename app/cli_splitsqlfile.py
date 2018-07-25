@@ -3,6 +3,7 @@
 
 import os
 import shutil
+import in_place
 #import argparse
 
 VERSION = "0.0.1"
@@ -30,7 +31,7 @@ def parsewholefile(filePath, currentYear, specYear):
     2.建表语句中将[currentYear]替换成[specYear]
     '''
     #根据[filePath]创建建表语句目录,若目录已存在则删除整个目录重建
-    paths = filePath.split("\\")
+    paths = filePath.split("/")
     sqlDirPath = "/".join(paths[:len(paths) - 1]) + "/建表语句"  # 获取目录所在位置
     print("创建建表脚本文件于[%s]" % sqlDirPath)
     if (os.path.exists(sqlDirPath)):
@@ -43,6 +44,22 @@ def parsewholefile(filePath, currentYear, specYear):
 
     #重命名拆分后单表脚本文件, 替换[specYear]
     renamefile(sqlDirPath, currentYear, specYear)
+
+
+def reyearfile(sqlDirPath, currentYear, specYear):
+    reyearcount = 0
+    with in_place.InPlace(sqlDirPath) as sql:
+        for line in sql:
+            if "CREATE TABLE" in line:
+                reyearcount += 1
+                print("翻新脚本片段 %s" % line)
+                sql.write(line.replace(currentYear, specYear))
+                pass
+            else:
+                sql.write(line)
+        pass
+    print("共计替换翻新表名%d个" % (reyearcount))
+    pass
 
 
 def renamefile(sqlDirPath, currentYear, specYear):
@@ -94,7 +111,9 @@ def splitfile(filePath, sqlDirPath):
 
 
 if __name__ == '__main__':
-    parsewholefile(
-        "D:\\cvsdocument\\应用开发部\\科研计划项目\\论证项目管理子系统（课题可行性方案）\\设计文档\\2018年度\\2018年度可行性方案新建表脚本.sql",
-        "2018", "2019")
+    # parsewholefile(
+    #     "D:\\cvsdocument\\应用开发部\\科研计划项目\\论证项目管理子系统（课题可行性方案）\\设计文档\\2018年度\\2018年度可行性方案新建表脚本.sql",
+    #     "2018", "2019")
+    reyearfile('D:/cvsdocument/应用开发部/科研计划项目/论证项目管理子系统（课题可行性方案）/设计文档/2019年度/2019年度可行性方案表翻年度建表语句_20180725.sql', '2018', '2019')
+
     pass
