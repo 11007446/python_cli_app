@@ -8,6 +8,7 @@ clint = "*"
 click = "*"
 scapy = "*"
 in-place = "*"
+prettytable = "*"
 
 [dev-packages]
 "flake8" = "*"
