@@ -1,6 +1,7 @@
 # !/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 import datetime
+import os
 
 
 def genWeekTODO():
@@ -21,18 +22,11 @@ def genWeekTODO():
     todofilefullpath = 'D:/developer/todo/todo/weekwork/{}~{}.todo'.format(
         monday_f, firday_f)
 
-    # with open(todofilefullpath, mode='w') as tdf:
-    #     tdf.writelines("本周工作（{},{},{},{},{}）:".format())
-    #     pass
-
-    print(week_get(today))
-
-    print(today_f)
-    print(firday_f)
-    print(monday_f)
-    print(todofilefullpath)
-    print(week_get(today))
-    pass
+    if(not os.path.exists(todofilefullpath)):
+        with open(todofilefullpath, mode='w') as tdf:
+            tdf.writelines("本周工作({}~{}):".format(monday, firday_f))
+            pass
+        pass
 
 
 def week_get(vdate):
