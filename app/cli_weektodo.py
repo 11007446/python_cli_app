@@ -23,10 +23,12 @@ def genWeekTODO():
         monday_f, firday_f)
 
     if(not os.path.exists(todofilefullpath)):
-        with open(todofilefullpath, mode='w') as tdf:
-            tdf.writelines("本周工作({}~{}):".format(monday, firday_f))
+        with open(todofilefullpath, mode='w', encoding='utf-8') as tdf:
+            tdf.writelines("本周工作({}~{}):".format(monday_f, firday_f))
             pass
         pass
+    print("{}生成完毕", format(todofilefullpath))
+
 
 
 def week_get(vdate):
