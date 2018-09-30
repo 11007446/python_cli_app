@@ -22,13 +22,23 @@ def genWeekTODO():
     todofilefullpath = 'D:/developer/todo/todo/weekwork/{}~{}.todo'.format(
         monday_f, firday_f)
 
-    if(not os.path.exists(todofilefullpath)):
+    if (not os.path.exists(todofilefullpath)):
         with open(todofilefullpath, mode='w', encoding='utf-8') as tdf:
-            tdf.writelines("本周工作({}~{}):".format(monday_f, firday_f))
+            tdf.writelines("本周工作({}):".format(week_get(today)))
             pass
         pass
-    print("{}生成完毕", format(todofilefullpath))
+    print("{}生成完毕".format(todofilefullpath))
 
+
+numcn = {
+    1: "一",
+    2: "二",
+    3: "三",
+    4: "四",
+    5: "五",
+    6: "六",
+    7: "日",
+}
 
 
 def week_get(vdate):
@@ -39,12 +49,16 @@ def week_get(vdate):
     week7 = []
     i = 0
     while (i <= 6):
-        week7.append('周' + str(i + 1) + ': ' +
-                     str(dayfrom + datetime.timedelta(days=i)))
+        week7.append('周{}[{}]'.format(
+            numcn.get(i + 1), str(dayfrom + datetime.timedelta(days=i))))
+        # week7.append('周' + numcn.get(i + 1) + '' +
+        #              str(dayfrom + datetime.timedelta(days=i)))
         i += 1
     return week7
 
 
 if __name__ == '__main__':
+
     genWeekTODO()
+    #print(week_get(datetime.date.today()))
     pass
