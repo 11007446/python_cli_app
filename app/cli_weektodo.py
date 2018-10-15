@@ -2,6 +2,8 @@
 # -*- coding: UTF-8 -*-
 import datetime
 import os
+#import shutil
+
 
 
 def genWeekTODO():
@@ -21,12 +23,20 @@ def genWeekTODO():
     monday_f = datetime.datetime.strftime(monday, date_patten)
     todofilefullpath = 'D:/developer/todo/todo/weekwork/{}~{}.todo'.format(
         monday_f, firday_f)
+    thisweek = week_get(today)
+    if (os.path.exists(todofilefullpath)):
+        os.remove(todofilefullpath)
+    with open(todofilefullpath, mode='w', encoding='utf-8') as tdf:
+        tdf.write("本周工作如下:\n\n")
 
-    if (not os.path.exists(todofilefullpath)):
-        with open(todofilefullpath, mode='w', encoding='utf-8') as tdf:
-            tdf.writelines("本周工作({}):".format(week_get(today)))
+        for day in thisweek:
+            tdf.write("    {}:".format(day))
+            tdf.write("\n")
+            tdf.write("\n")
+
             pass
         pass
+    pass
     print("{}生成完毕".format(todofilefullpath))
 
 
