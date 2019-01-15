@@ -2,10 +2,11 @@
 # -*- coding: UTF-8 -*-
 import datetime
 import os
+import click
 #import shutil
 
 
-
+@click.command()
 def genWeekTODO():
     #TODO:
     #获取当前日期
@@ -24,20 +25,28 @@ def genWeekTODO():
     todofilefullpath = 'D:/developer/todo/todo/weekwork/{}~{}.todo'.format(
         monday_f, firday_f)
     thisweek = week_get(today)
+    #如果有重复文件，控制台提示等待用户确认是否覆盖
     if (os.path.exists(todofilefullpath)):
-        os.remove(todofilefullpath)
-    with open(todofilefullpath, mode='w', encoding='utf-8') as tdf:
-        tdf.write("本周工作如下:\n\n")
 
-        for day in thisweek:
-            tdf.write("    {}:".format(day))
-            tdf.write("\n")
-            tdf.write("\n")
+        answer = input("已有该文件存在,确认覆盖 Y/N ？")  # type:str
+        answer = answer.upper
+        if (answer == "Y"):
+            os.remove(todofilefullpath)
+            with open(todofilefullpath, mode='w', encoding='utf-8') as tdf:
+                tdf.write("本周工作如下:\n\n")
 
+                for day in thisweek:
+                    tdf.write("    {}:".format(day))
+                    tdf.write("\n")
+                    tdf.write("\n")
+
+                    pass
+                pass
             pass
-        pass
-    pass
-    print("{}生成完毕".format(todofilefullpath))
+            print("{}生成完毕".format(todofilefullpath))
+        else:
+            click.echo("保留原有todo文件！")
+            return
 
 
 numcn = {
@@ -70,5 +79,5 @@ def week_get(vdate):
 if __name__ == '__main__':
 
     genWeekTODO()
-    #print(week_get(datetime.date.today()))
+
     pass
