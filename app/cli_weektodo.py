@@ -30,23 +30,22 @@ def genWeekTODO():
 
         answer = input("已有该文件存在,确认覆盖 Y/N ？")  # type:str
         answer = answer.upper
-        if (answer == "Y"):
-            os.remove(todofilefullpath)
-            with open(todofilefullpath, mode='w', encoding='utf-8') as tdf:
-                tdf.write("本周工作如下:\n\n")
+        while(1):
+            if (answer == 'Y'):
+                os.remove(todofilefullpath)
+                with open(todofilefullpath, mode='w', encoding='utf-8') as tdf:
+                    tdf.write("本周工作如下:\n\n")
+                    for day in thisweek:
+                        tdf.write("    {}:".format(day))
+                        tdf.write("\n")
+                        tdf.write("\n")
 
-                for day in thisweek:
-                    tdf.write("    {}:".format(day))
-                    tdf.write("\n")
-                    tdf.write("\n")
+                click.echo("{}生成完毕".format(todofilefullpath))
+            elif (answer == 'Y'):
+                click.echo("保留原有todo文件！推出程序")
+            else
+                click.echo("无效命令")
 
-                    pass
-                pass
-            pass
-            print("{}生成完毕".format(todofilefullpath))
-        else:
-            click.echo("保留原有todo文件！")
-            return
 
 
 numcn = {
